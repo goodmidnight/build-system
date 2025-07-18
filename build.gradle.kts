@@ -8,4 +8,7 @@ version = "0.0.1"
 dependencies {
     compileOnly(libs.kotlin.gradle)
     compileOnly(libs.android.gradle)
+    compileOnly(buildLib.kotlin.gradle)
+    compileOnly(buildLib.android.gradle)
+}
 }
