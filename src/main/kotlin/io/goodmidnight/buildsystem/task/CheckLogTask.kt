@@ -44,14 +44,14 @@ abstract class CheckLogTask : DefaultTask() {
         // Write text in the report file
         reportFile.writeText(
             text = if (logCallFindings.isNotEmpty())
-                """--- Log Call Report ---
-                    Detected ${logCallFindings.size} Log/Timber calls across your project.
-                    
-                    ${logCallFindings.joinToString("\n")}""".trimIndent()
-            else """--- Log Call Report ---
-                No Log/Timber calls detected in the scanned source files.
-            """.trimIndent()
+                "--- Log Call Report ---\nDetected ${logCallFindings.size} Log/Timber calls across your project.\n${
+                    logCallFindings.joinToString(
+                        "\n"
+                    )
+                }"
+            else "--- Log Call Report ---\nNo Log/Timber calls detected in the scanned source files."
         )
+
 
         println("Log detection complete. Report generated at: ${reportFile.absolutePath}")
     }
