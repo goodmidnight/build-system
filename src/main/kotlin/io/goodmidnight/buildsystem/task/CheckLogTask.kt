@@ -18,7 +18,7 @@ abstract class CheckLogTask : DefaultTask() {
     abstract val reportFile: RegularFileProperty
 
     @TaskAction
-    fun findLogDCalls() {
+    fun execute() {
         println("Starting Log call detection process")
 
         if (sourceFiles.files.isEmpty())
