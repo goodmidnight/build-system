@@ -16,13 +16,10 @@ class LogPlugin : Plugin<Project> {
             group = GROUP_NAME
             description = "Detects all Log calls in source files and generates a report."
 
-            // Collects source files from specified source sets (main, test)
-            project.fileTree(
-                mapOf(
-                    "dir" to "src/main",
-                    "include" to listOf("**/*.kt", "**/*.java")
-                )
-            )
+            // Collects source files from specified source sets
+            sourceFiles.from(project.fileTree("src/main") {
+                include("**/*.kt", "**/*.java")
+            })
 
             reportFile.set(project.layout.buildDirectory.file("reports/log-check/report.txt"))
         }
