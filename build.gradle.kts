@@ -13,7 +13,7 @@ dependencies {
 gradlePlugin {
     plugins {
         register("LogPlugin") {
-            id = "id.goodmidnight.buildsystem.log"
+            id = "io.goodmidnight.buildsystem.log"
             implementationClass = "io.goodmidnight.buildsystem.plugin.LogPlugin"
         }
     }
